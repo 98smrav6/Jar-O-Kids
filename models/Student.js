@@ -28,6 +28,11 @@ Student.init(
         student_address: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        student_status: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            defaultValue: 'processing'
         }
 
     }, {
