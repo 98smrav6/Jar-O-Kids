@@ -1,8 +1,14 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
 
 // create our Post model
-class Parent extends Model {}
+class Parent extends Model {
+    // set up method to run on instance data (per user) to check password
+    checkPassword(loginPw) {
+      return bcrypt.compareSync(loginPw, this.password);
+    }
+  }
 
 
 Parent.init(
@@ -37,6 +43,18 @@ Parent.init(
             }
         }
     }, {
+        hooks: {
+            // set up beforeCreate lifecycle "hook" functionality
+            async beforeCreate(newUserData) {
+              newUserData.password = await bcrypt.hash(newUserData.password, 10);
+              return newUserData;
+            },
+            // set up beforeUpdate lifecycle "hook" functionality
+            async beforeUpdate(updatedUserData) {
+              updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+              return updatedUserData;
+            }
+        },      
         sequelize,
         freezeTableName: true,
         underscored: true,

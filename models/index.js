@@ -1,7 +1,6 @@
 const Student = require("./Student");
 const Parent = require("./Parent");
-const Admin = require("./Admin");
 
 
 
-module.exports = { Student, Parent, Admin };
+module.exports = { Student, Parent };
