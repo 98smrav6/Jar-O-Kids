@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // create our Post model
-class Post extends Model {}
+class Parent extends Model {}
 
 
 Parent.init(
@@ -29,12 +29,11 @@ Parent.init(
                 isEmail: true
             }
         },
-        student_id: {
-            type: DataTypes.STRING(10000),
+        password: {
+            type: DataTypes.STRING,
             allowNull: false,
-            ReferenceError: {
-                Model: 'student',
-                key: 'id'
+            validate: {
+                len: [6]
             }
         }
     }, {
