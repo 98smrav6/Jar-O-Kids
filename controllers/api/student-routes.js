@@ -4,6 +4,12 @@ const { Student, Parent } = require('../../models');
 // GET /api/students
 router.get('/', (req, res) => {
     Student.findAll({
+      include: [
+        {
+          model: Parent,
+          attributes: ['parent_name','parnet_phone','parnet_email']
+        }
+      ]
     })
       .then(dbPostData => res.json(dbPostData))
       .catch(err => {
@@ -17,7 +23,14 @@ router.get('/:id', (req, res) => {
     Student.findOne({
       where: {
         id: req.params.id
-      }
+      },
+      include: [
+        {
+          model: Parent,
+          attributes: ['parent_name','parnet_phone','parnet_email']
+        }
+      ]
+
     })
       .then(dbUserData => {
         if (!dbUserData) {
