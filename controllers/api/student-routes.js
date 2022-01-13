@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { Student } = require('../../models');
+const { Student, Parent } = require('../../models');
 
-// get all Student
+// GET /api/students
 router.get('/', (req, res) => {
     Student.findAll({
     })
@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
       });
   });
   
-// GET /api/student/1
+// GET /api/students/1
 router.get('/:id', (req, res) => {
     Student.findOne({
       where: {
@@ -35,12 +35,13 @@ router.get('/:id', (req, res) => {
 
 // POST /api/students
 router.post('/', (req, res) => {
-    // expects {student_firstname: 'Lernantino', student_lastname: 'lastname', student_grade: 'Grade1',student_address: '123 main st'}
+    // expects {student_firstname: 'Lernantino', student_lastname: 'lastname', student_grade: 'Grade1',student_address: '123 main st', parent_id: '1'}
     Student.create({
       student_firstname: req.body.student_firstname,
       student_lastname: req.body.student_lastname,
       student_grade: req.body.student_grade,
-      student_address: req.body.student_address
+      student_address: req.body.student_address,
+      parent_id: req.body.parent_id
       
     })
       .then(dbUserData => res.json(dbUserData))
