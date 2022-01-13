@@ -6,6 +6,8 @@ Parent.hasMany(Student, {
     foreignKey: 'parent_id'
 });
 
-Student.belongsTo(Parent)
+Student.belongsTo(Parent, {
+    foreignKey: 'parent_id'
+});
 
 module.exports = { Student, Parent, Admin };
