@@ -23,11 +23,11 @@ Parent.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        parnet_phone: {
+        parent_phone: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        parnet_email: {
+        parent_email: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,

@@ -12,9 +12,9 @@
 // for parent
 {
 	"parent_name": "john",
-	"parnet_phone": "Smith",
-	"parnet_email": "7344445444",
-	"parnet_email": "john@mail.com",
+	"parent_phone": "Smith",
+	"parent_email": "7344445444",
+	"parent_email": "john@mail.com",
 	"password": "123456789"
 }
 
