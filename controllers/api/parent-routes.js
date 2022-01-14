@@ -53,5 +53,24 @@ router.post('/', (req, res) => {
       });
   });
 
+// DELETE /api/parents/1
+router.delete('/:id', (req, res) => {
+  Parent.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(dbUserData => {
+      if (!dbUserData) {
+        res.status(404).json({ message: 'No Student found with this id' });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
   module.exports = router;

@@ -1,0 +1,20 @@
+// this is just data not seed
+
+// for student
+{
+	"student_firstname": "john",
+	"student_lastname": "Smith",
+	"student_grade": "Grade1",
+	"student_address": "123 main st",
+	"parent_id": "1"
+}
+
+// for parent
+{
+	"parent_name": "john",
+	"parnet_phone": "Smith",
+	"parnet_email": "7344445444",
+	"parnet_email": "john@mail.com",
+	"password": "123456789"
+}
+

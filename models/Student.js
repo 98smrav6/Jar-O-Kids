@@ -29,6 +29,15 @@ Student.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        parent_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'parent',
+                key: 'id'
+            },
+            
+        },
         student_status: {
             type: DataTypes.STRING,
             allowNull: true,
