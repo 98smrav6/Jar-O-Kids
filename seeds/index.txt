@@ -11,9 +11,8 @@
 
 // for parent
 {
-	"parent_name": "john",
-	"parent_phone": "Smith",
-	"parent_email": "7344445444",
+	"parent_name": "john doe",
+	"parent_phone": "7344445444",
 	"parent_email": "john@mail.com",
 	"password": "123456789"
 }
