@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
       include: [
         {
           model: Parent,
-          attributes: ['parent_name','parnet_phone','parnet_email']
+          attributes: ['parent_name','parent_phone','parent_email']
         }
       ]
     })
@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
       include: [
         {
           model: Parent,
-          attributes: ['parent_name','parnet_phone','parnet_email']
+          attributes: ['parent_name','parent_phone','parent_email']
         }
       ]
 
