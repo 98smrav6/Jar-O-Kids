@@ -4,6 +4,14 @@ const { Student, Parent } = require('../../models');
 // GET /api/students
 router.get('/', (req, res) => {
     Student.findAll({
+      attributes: [
+        'id',
+        'student_firstname',
+        'student_lastname',
+        'student_grade',
+        'student_address',
+        'student_status'
+      ],
       include: [
         {
           model: Parent,
@@ -24,6 +32,14 @@ router.get('/:id', (req, res) => {
       where: {
         id: req.params.id
       },
+      attributes: [
+        'id',
+        'student_firstname',
+        'student_lastname',
+        'student_grade',
+        'student_address',
+        'student_status'
+      ],
       include: [
         {
           model: Parent,
@@ -88,6 +104,7 @@ router.put('/:id', (req, res) => {
 
 // DELETE /api/students/1
 router.delete('/:id', (req, res) => {
+    console.log('id', req.params.id);
     Student.destroy({
       where: {
         id: req.params.id
