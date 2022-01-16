@@ -38,11 +38,11 @@ router.get('/:id', (req, res) => {
   
 // POST /api/parents
 router.post('/', (req, res) => {
-    // expects {parent_name: 'Lernantino', parnet_phone: '987654321', parnet_email: 'parent@gmail.com',password: 'P@ssw0rd'}
+    // expects {parent_name: 'Lernantino', parent_phone: '987654321', parent_email: 'parent@gmail.com',password: 'P@ssw0rd'}
     Parent.create({
       parent_name: req.body.parent_name,
-      parnet_phone: req.body.parnet_phone,
-      parnet_email: req.body.parnet_email,
+      parent_phone: req.body.parent_phone,
+      parent_email: req.body.parent_email,
       password: req.body.password
       
     })
