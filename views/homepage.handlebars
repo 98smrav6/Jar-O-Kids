@@ -1,33 +1,30 @@
-<<<<<<< HEAD
 //Homepage  -     website 
 //refer to Main.jpg
 // This will contain a data input form that will create the parent model and associated child model
 // redirect parent to parent page after submit info is validated
 
 <div>You are on the homepage</div>
-=======
-<form class="signup-form">
+<!--Registration Form-->
 
-    <div>
-        <label for="parent-name-signup">Parent Name:</label>
-        <input type="text" id="parent-name-signup" />
-    </div>
-    <div>
-        <label for="email-signup">Email:</label>
-        <input type="text" id="email-signup" />
-    </div>
-    <div>
-        <label for="password-signup">Password:</label>
-        <input type="password" id="password-signup" />
-    </div>
-    <div>
-        <label for="phone-signup">Phone Number:</label>
-        <input type="phone" id="phone-signup" />
-    </div>
+<section class="hero">
+<div class="hero-form">
+    <h3>Please Fill Out Below:</h3>
+    <form id="registration-form">
+      <label for="parent-name" class="form-label">Parent Name:</label>
+      <input type="text" id="parent-name" class="form-input input" placeholder="Enter Name"
+        name="parent-name">
 
-    <div>  
-    <button type="submit">Sign Up</button>
-    </div>
+      <label for="email-input" class="form-label input">Email:</label>
+      <input type="text" id="email-input" class="form-input" placeholder="Enter Email" name="age">
 
-</form>
->>>>>>> b0a014dd94992500ac819d7c378fea622e188ed3
+      <label for="phone-number" class="form-label">Phone Number:</label>
+      <input type="text" class="form-input input" id="phone-number" placeholder="Enter Phone Number"
+        name="phone-number">
+
+        <label for="pass-word" class="form-label">Password:</label>
+        <input type="text" class="form-input input" id="pass-word" placeholder="Enter Password"
+          name="pass-word">
+<!--Submit button-->
+      <button class="btn">Submit</button>
+    </form>
+  </div>
