@@ -1,0 +1,18 @@
+<div>This is the Parent Dashboard View</div>
+
+<ol class="student-list">
+  {{#each student }}
+  <li>
+    <article class="student">
+        <div class="student-name">
+            <a href="/students/{{id}}">{{student.student_firstname}} {{student.student_lastname}}</a>
+        </div>
+        <div class="meta">
+            <p>Student Address: {{student.student_address}}</p>
+            <p>Student Grade: {{student.student_grade}}</p>
+            <p>Student Enrollment Status:  {{student.student_status}}</p>
+        </div>
+    </article>
+  </li>
+  {{/each}}
+</ol>
