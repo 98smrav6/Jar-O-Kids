@@ -1,7 +1,7 @@
-<div>This is the Parent Dashboard View</div>
 
 <ol class="student-list">
-  {{#each student }}
+  <h2> Your Student(s) </h2>
+  {{#each students as |student| }}
   <li>
     <article class="student">
         <div class="student-name">
@@ -30,11 +30,11 @@
     </div>
     <div>
         <label for="student-grade-add">Student Grade Level:</label>
-        <input type="password" id="student-grade-add" />
+        <input type="text" id="student-grade-add" />
     </div>
     <div>
         <label for="#address-add">Student Address:</label>
-        <input type="phone" id="#address-add" />
+        <input type="text" id="#address-add" />
     </div>
 
     <div>  
