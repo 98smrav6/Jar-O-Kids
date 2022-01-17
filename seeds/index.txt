@@ -17,3 +17,9 @@
 	"password": "123456789"
 }
 
+{
+
+		"parent_email": "johnph@mail.com",
+		"password": "123456"
+}
+

@@ -8,7 +8,7 @@ async function signupFormHandler(event) {
   
     if ( parent_name && parent_phone && parent_email && password ) {
       const response = await fetch('api/parents', {
-        method: 'post',
+        method: 'POST',
         body: JSON.stringify({
           parent_name,
           parent_phone,
@@ -20,7 +20,7 @@ async function signupFormHandler(event) {
   
       if (response.ok) {
         console.log('success');
-        document.location.replace('/parentDash/');
+        document.location.replace('/parentDash');
       } else {
         alert(response.statusText);
       }

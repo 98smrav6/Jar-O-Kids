@@ -1,5 +1,3 @@
-//functions to add student via an add student form/button that will be present on the /parent view  Also determine how to add parent id to the post
-
 async function addStudentHandler(event) {
     event.preventDefault();
   
@@ -10,7 +8,7 @@ async function addStudentHandler(event) {
   
     if (student_firstname && student_lastname && student_grade && address) {
       const response = await fetch('/api/parents', {
-        method: 'post',
+        method: 'POST',
         body: JSON.stringify({
           parent_name,
           phone,
