@@ -25,8 +25,8 @@ router.get('/', (req, res) => {
     ]
   })
   .then(dbStudentData => {
-    const student = dbStudentData.map(student => student.get({ plain: true }));
-    res.render('parentDash', { student, loggedIn: true });
+    const students = dbStudentData.map(student => student.get({ plain: true }));
+    res.render('parentDash', { students , loggedIn: true });
   })
   .catch(err => {
     console.log(err);
@@ -34,9 +34,9 @@ router.get('/', (req, res) => {
   })
 });
 
-//Get single student where the logged in user in the associated parent 
+//Get single student where the logged in user is associated parent; send to edit page
 router.get('/edit/:id', (req, res) => {
-  Post.findByPk(req.params.id, {
+  Student.findByPk(req.params.id, {
     attributes: [
       'id',
       'student_firstname',
@@ -55,13 +55,13 @@ router.get('/edit/:id', (req, res) => {
     .then(dbStudentData => {
       if (dbStudentData) {
         const student = dbStudentData.get({ plain: true });
-        res.render('edit-post', {
+        res.render('edit-student', {
           student,
           loggedIn: true
         });
       } else {
         res.status(404).end();
-      }
+      }S
     })
     .catch(err => {
       res.status(500).json(err);
