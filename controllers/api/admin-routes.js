@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { Admin } = require('../../models');
 
-
-
 // GET /api/admins
 router.get('/', (req, res) => {
     Admin.findAll({

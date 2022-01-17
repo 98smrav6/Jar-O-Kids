@@ -16,7 +16,10 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 //Review session secret - store in dotenv
 const sess = {
   secret: process.env.DB_SECRET,
-  cookie: {},
+  cookie: {
+    // Session will automatically expire in 10 minutes
+    expires: 10 * 60 * 1000
+},
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -30,7 +33,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Handlbars
+//Handlebars
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 

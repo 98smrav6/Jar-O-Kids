@@ -1,7 +1,7 @@
 //Function to logout and return to main page/login
 async function logout() {
   const response = await fetch('/api/parents/logout', {
-    method: 'post',
+    method: 'POST',
     headers: { 'Content-Type': 'application/json' }
   });
 
