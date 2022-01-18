@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Student, Parent } = require('../../models');
+const withAuth = require('../../utils/auth.js');
 
 // GET all students /api/students
 router.get('/', (req, res) => {
@@ -63,14 +64,14 @@ router.get('/:id', (req, res) => {
   
 
 // POST /api/students
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
   // expects {student_firstname: 'Lernantino', student_lastname: 'lastname', student_grade: 'Grade1',student_address: '123 main st', parent_id: '1'}
   Student.create({
     student_firstname: req.body.student_firstname,
     student_lastname: req.body.student_lastname,
     student_grade: req.body.student_grade,
     student_address: req.body.student_address,
-    parent_id: req.body.parent_id
+    parent_id: req.session.user_id
     
   })
   .then(dbUserData => res.json(dbUserData))
