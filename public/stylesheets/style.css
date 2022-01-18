@@ -3,8 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-
+/* Header font */
+h1 {
+  font-family: 'Corben', Georgia, Times, serif;
+}
+p, div {
+  font-family: 'Nobile', Helvetica, Arial, sans-serif;
+}
+h2 {
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+}
 body {
   margin: 0;
   padding: 0;
@@ -15,6 +25,7 @@ body {
   font-size: 16px;
 }
 
+/* Style button start */
 .btn {
   align-items: center;
   background-color: yellowgreen;
@@ -38,6 +49,14 @@ body {
   cursor: pointer;
 }
 
+.container {  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  }  
+
+/*Style button end */
+
 header {
   padding: 20px 35px;
   background-color: #39a6b2;
@@ -46,44 +65,24 @@ header {
   flex-wrap: wrap;
 }
 
+/* Registration form */
 .hero {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.hero-cta {
-  width: 35%;
-  text-align: right;
-  margin: 3.5%;
-  color: #fff;
-  font-size: 18px;
-  line-height: 1.3;
-}
-
-.hero-cta h2 {
-font-style: italic;
-font-size: 55px;
-color: #fce138;
-}
-
+/* Registration style */
 .hero-form {
 border: 3px solid #def50a;
 background-color: #38aefc;
-padding: 80px;
+padding: 40px;
 color: #00070a;
 width: 40%;
 margin: 3.5%
 }
 
-.hero-form h3 {
-font-size: 24px;
-margin: 80;
-}
-.hero-form p {
-margin: 5px 0 15px 0;
-}
-
+/* Form style */
 .form-input {
   border: 1px solid #024e76;
   display: block;
@@ -94,6 +93,9 @@ margin: 5px 0 15px 0;
   margin-bottom: 15px;
 }
 
-.flex-row {
-  display: flex;
-}
+
+footer {
+display: flex;  
+justify-content: center;  
+align-items: center;  
+}  
