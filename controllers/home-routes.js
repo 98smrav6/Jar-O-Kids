@@ -14,4 +14,14 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+
+
+router.get('/admin', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/adminDash');
+    return;
+  }
+
+  res.render('admin');
+});
 module.exports = router;
