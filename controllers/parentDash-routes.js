@@ -1,39 +1,71 @@
 const router = require('express').Router();
-const { Student } = require('../models');
+const { Student, Parent } = require('../models');
 
 //When the URL is examplewebsite.com/, then the parentDash.handlbars view will be rendered within the main.handlebars layout
+//Get all students where the logged in user in the associated parent
 router.get('/', (req, res) => {
-  console.log(req.session);
-  router.get('/', (req, res) => {   
-    Student.findAll({
-      where: {
-        parent_id: req.session.parent_id
-      },
-      attributes: [
-        'id',
-        'student_firstname',
-        'student_lastname',
-        'student_grade',
-        'student_address',
-        'student_status'
-      ],
-      include: [
-        {
-          model: Parent,
-          attributes: ['parent_name','parent_phone','parent_email']
-        }
-      ]
-    })
-    .then(dbStudentData => {
+  console.log(req.session); 
+  Student.findAll({
+    where: {
+      parent_id: req.session.user_id
+    },
+    attributes: [
+      'id',
+      'student_firstname',
+      'student_lastname',
+      'student_grade',
+      'student_address',
+      'student_status'
+    ],
+    include: [
+      {
+        model: Parent,
+        attributes: ['parent_name','parent_phone','parent_email']
+      }
+    ]
+  })
+  .then(dbStudentData => {
+    const students = dbStudentData.map(student => student.get({ plain: true }));
+    res.render('parentDash', { students , loggedIn: true });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  })
+});
 
-      const student = dbStudentData.map(student => student.get({ plain: true }));
-      res.render('parentDash', { student, loggedIn: true });
+//Get single student where the logged in user is associated parent; send to edit page
+router.get('/edit/:id', (req, res) => {
+  Student.findByPk(req.params.id, {
+    attributes: [
+      'id',
+      'student_firstname',
+      'student_lastname',
+      'student_grade',
+      'student_address',
+      'student_status'
+    ],
+    include: [
+      {
+        model: Parent,
+        attributes: ['parent_name','parent_phone','parent_email']
+      }
+    ]
+  })
+    .then(dbStudentData => {
+      if (dbStudentData) {
+        const student = dbStudentData.get({ plain: true });
+        res.render('edit-student', {
+          student,
+          loggedIn: true
+        });
+      } else {
+        res.status(404).end();
+      }S
     })
     .catch(err => {
-      console.log(err);
       res.status(500).json(err);
-    })
-  });
+    });
 });
 
 module.exports = router;

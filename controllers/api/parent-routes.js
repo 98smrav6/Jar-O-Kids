@@ -29,7 +29,7 @@ router.get('/:id', (req, res) => {
   })
   .then(dbUserData => {
     if (!dbUserData) {
-      res.status(404).json({ message: 'No user parent with this id' });
+      res.status(404).json({ message: 'No parent with this id' });
         return;
     }
     res.json(dbUserData);
@@ -42,13 +42,12 @@ router.get('/:id', (req, res) => {
   
 // POST /api/parents
 router.post('/', (req, res) => {
-  // expects {parent_name: 'Lernantino', parent_phone: '987654321', parent_email: 'parent@gmail.com',password: 'P@ssw0rd'}
+  // expects {parent_name: 'Lernantino', parent_phone: '987654321', parent_email: 'parent@gmail.com', password: 'P@ssw0rd'}
   Parent.create({
     parent_name: req.body.parent_name,
     parent_phone: req.body.parent_phone,
     parent_email: req.body.parent_email,
-    password: req.body.password
-    
+    password: req.body.password  
   })
   .then(dbUserData => {
     req.session.save(() => {
@@ -59,6 +58,10 @@ router.post('/', (req, res) => {
       res.json(dbUserData);
     });
   })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 
@@ -84,8 +87,8 @@ router.post('/login', (req, res) => {
 
     req.session.save(() => {
       // declare session variables
-      req.session.user_id = dbUserData.user_id;
-      req.session.parent_name = dbUserData.parent_name;
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.parent_name;
       req.session.loggedIn = true;
 
       res.json({ user: dbUserData, message: 'You are now logged in!' });
@@ -99,7 +102,8 @@ router.post('/logout', (req, res) => {
     req.session.destroy(() => {
       res.status(204).end();
     });
-  } else {
+  }
+  else {
     res.status(404).end();
   }
 });

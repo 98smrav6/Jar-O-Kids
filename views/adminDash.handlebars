@@ -1,0 +1,20 @@
+<ol class="student-list">
+  <h2> List of Student(s) </h2>
+  {{#each admins as |admin| }}
+  <li>
+    <article class="student">
+        <div class="student-name">
+            <a href="/students/{{id}}">{{admin.student_firstname}} {{admin.student_lastname}}</a>
+        </div>
+        <div class="meta">
+            <p>Student Address: {{admin.student_address}}</p>
+            <p>Student Grade: {{admin.student_grade}}</p>
+            <p>parent name: {{admin.parent.parent_name}}</p>
+            <p>parent phone: {{admin.parent.parent_phone}}</p>
+            <p>parent email: {{admin.parent.parent_email}}</p>
+            <p>Student Enrollment Status:  {{admin.student_status}}</p>
+        </div>
+    </article>
+  </li>
+  {{/each}}
+</ol>
