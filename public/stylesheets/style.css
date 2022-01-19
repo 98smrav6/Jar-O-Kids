@@ -93,6 +93,54 @@ margin: 3.5%
   margin-bottom: 15px;
 }
 
+/* Login style */
+.login {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Login style */
+.login-form {
+border: 3px solid #def50a;
+background-color: #38aefc;
+padding: 20px;
+color: #00070a;
+width: 20%;
+margin: 3.5%
+}
+
+/* Style button start */
+.submit {
+  align-items: center;
+  background-color: yellowgreen;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: center;
+  font-size: 14px;
+  font-weight: 700;
+  justify-content: center;
+  line-height: .9em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.submit {  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  }  
+
+/*Style button end */
 
 footer {
 display: flex;  
