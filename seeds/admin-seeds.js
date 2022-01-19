@@ -7,6 +7,6 @@ const adminData = [
     }
 ];
 
-const seedAdmins = () => Admin.bulkCreate(adminData);
+const seedAdmins = () => Admin.bulkCreate(adminData, {individualHooks: true});
 
 module.exports = seedAdmins;

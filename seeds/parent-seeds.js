@@ -15,6 +15,6 @@ const parentData = [
     }
 ];
 
-const seedParents = () => Parent.bulkCreate(parentData);
+const seedParents = () => Parent.bulkCreate(parentData, {individualHooks: true});
 
 module.exports = seedParents;

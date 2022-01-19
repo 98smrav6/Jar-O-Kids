@@ -6,21 +6,21 @@ const studentData = [
         student_lastname: 'Smith',
         student_grade: 'Grade1',
         student_address: '123 main st',
-        "parent_id": '1'
+        "parent_id": 1
     },
     {
         student_firstname: 'Weliam',
         student_lastname: 'John',
         student_grade: 'Grade2',
         student_address: '354 main st',
-        "parent_id": '2'
+        "parent_id": 2
     },
     {
         student_firstname: 'Danny',
         student_lastname: 'Martinez',
         student_grade: 'Grade4',
         student_address: '354 main st',
-        "parent_id": '1'
+        "parent_id": 1
     }
 ];
 
