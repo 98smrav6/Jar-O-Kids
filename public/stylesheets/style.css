@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+/*Homepage.handlebars*/
 /* Header font */
 h1 {
   font-family: 'Corben', Georgia, Times, serif;
@@ -93,6 +94,7 @@ margin: 3.5%
   margin-bottom: 15px;
 }
 
+/*login.handlebars/*
 /* Login style */
 .login {
   display: flex;
@@ -142,6 +144,48 @@ margin: 3.5%
 
 /*Style button end */
 
+/*admin.handlebars*/
+
+
+
+/*parentDash.handlebars*/
+/*form style*/
+.student-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+.student-form {
+border: 3px solid #def50a;
+background-color: #38aefc;
+padding: 40px;
+color: #00070a;
+width: 40%;
+margin: 3.5%
+}
+
+
+/*adminDash.handlebars*/
+.student-name {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+.student-name {
+border: 3px solid #def50a;
+background-color: #38aefc;
+padding: 40px;
+color: #00070a;
+width: 40%;
+margin: 3.5%
+}
+
+
+/*footer */
 footer {
 display: flex;  
 justify-content: center;  
