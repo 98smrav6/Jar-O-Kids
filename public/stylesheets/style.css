@@ -75,7 +75,6 @@ header {
 
 /* Registration style */
 .hero-form {
-border: 3px solid #def50a;
 background-color: #38aefc;
 padding: 40px;
 color: #00070a;
@@ -104,7 +103,6 @@ margin: 3.5%
 
 /* Login style */
 .login-form {
-border: 3px solid #def50a;
 background-color: #38aefc;
 padding: 20px;
 color: #00070a;
@@ -115,7 +113,6 @@ margin: 3.5%
 /* Style button start */
 .submit {
   align-items: center;
-  background-color: yellowgreen;
   border: 0;
   border-radius: 4px;
   box-sizing: border-box;
@@ -150,20 +147,28 @@ margin: 3.5%
 
 /*parentDash.handlebars*/
 /*form style*/
-.student-form {
+.add-student-form {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-
 .student-form {
-border: 3px solid #def50a;
-background-color: #38aefc;
-padding: 40px;
-color: #00070a;
-width: 40%;
-margin: 3.5%
+  background-color: #38aefc;
+  padding: 40px;
+  color: #00070a;
+  width: 40%;
+  margin: 3.5%
+}
+
+.form-student {
+  border: 1px solid #024e76;
+  display: block;
+  padding: 7px 15px;
+  font-size: 16px;
+  color: #024e76;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 
@@ -176,7 +181,6 @@ margin: 3.5%
 
 
 .student-name {
-border: 3px solid #def50a;
 background-color: #38aefc;
 padding: 40px;
 color: #00070a;
