@@ -76,7 +76,7 @@ router.put('/:id', (req, res) => {
 //POST - api/admins/login
 router.post('/admin', (req, res) => {
   // expects {username: 'admin', password: 'admin'}
-  Parent.findOne({
+  Admin.findOne({
     where: {
       username: req.body.username
     }
@@ -106,7 +106,7 @@ router.post('/admin', (req, res) => {
 
 
 //POST - api/admins/logout - destroy/end sessions  
-router.post('logout', (req, res) => {
+router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
