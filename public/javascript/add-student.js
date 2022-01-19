@@ -1,25 +1,25 @@
 async function addStudentHandler(event) {
     event.preventDefault();
   
-    const student_firstname = document.querySelector('#student-firstname-signup').value.trim();
-    const student_lastname = document.querySelector('#student-lastname-signup').value.trim();
-    const student_grade = document.querySelector('#student-grade-signup').value.trim();
-    const address = document.querySelector('#address-signup').value.trim();
-  
-    if (student_firstname && student_lastname && student_grade && address) {
-      const response = await fetch('/api/parents', {
+    const student_firstname = document.querySelector('#student-firstname-add').value.trim();
+    const student_lastname = document.querySelector('#student-lastname-add').value.trim();
+    const student_grade = document.querySelector('#student-grade-add').value.trim();
+    const student_address = document.querySelector('#address-add').value.trim();
+
+    if (student_firstname && student_lastname && student_grade && student_address) {
+      const response = await fetch('/api/students', {
         method: 'POST',
         body: JSON.stringify({
-          parent_name,
-          phone,
-          email,
-          password
+          student_firstname,
+          student_lastname,
+          student_grade,
+          student_address,
         }),
         headers: { 'Content-Type': 'application/json' }
       });
   
-      if (response.ok && response_two.ok) {
-        document.location.replace('/dashboard/');
+      if (response.ok) {
+        document.location.reload();
       } else {
         alert(response.statusText);
       }
