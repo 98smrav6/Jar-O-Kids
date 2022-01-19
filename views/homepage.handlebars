@@ -1,34 +1,35 @@
-{{!-- <div>
-    <h1>Welcome to Jar-O-Kids Enrollment Application!</h1>
-    <p>Please See Below and complete all fields to sign up and submit a student for enrollment.  The student's status will be set to "processing" until 
-        reviewed by an administrator and updated to reflect "approved," in which case the student will proceed with the enrollment process.  Or, the status will 
-        reflect "denied."
-    </p>
-</div> --}}
+<!--Registration Form-->
+<section class="hero">
+<div class="hero-form">
+    <h2>Welcome to Registration!</h2>
+    <form id="registration-form">
+      <label for="parent-name" class="form-label">Parent Name:</label>
+      <input type="text" id="parent-name" class="form-input input" placeholder="Enter Name"
+        name="parent-name">
 
-<form class="signup-form">
+      <label for="email-input" class="form-label input">Email:</label>
+      <input type="text" id="email-input" class="form-input" placeholder="Enter Email" name="age">
 
-    <div>
-        <label for="parent-name-signup">Parent Name:</label>
-        <input type="text" id="parent-name-signup" />
-    </div>
-    <div>
-        <label for="email-signup">Email:</label>
-        <input type="text" id="email-signup" />
-    </div>
-    <div>
-        <label for="password-signup">Password:</label>
-        <input type="password" id="password-signup" />
-    </div>
-    <div>
-        <label for="phone-signup">Phone Number:</label>
-        <input type="phone" id="phone-signup" />
-    </div>
+      <label for="phone-number" class="form-label">Phone Number:</label>
+      <input type="text" class="form-input input" id="phone-number" placeholder="Enter Phone Number"
+        name="phone-number">
 
-    <div>  
-    <button type="submit">Sign Up</button>
-    </div>
+      <label for="pass-word" class="form-label">Password:</label>
+      <input type="text" class="form-input input" id="pass-word" placeholder="Enter Password"
+        name="pass-word">
 
+<!--Submit button-->
+<div class="container">
+      <button class="btn">Submit</button>
+    </form>
+  </div>
+
+</section>
+
+<footer>
+    <p>© 2022, JAR-O-KIDS. All rights reserved.</p>
+  </footer>
+</div>
 </form>
 
 <script src="/javascript/sign-up.js"></script>
