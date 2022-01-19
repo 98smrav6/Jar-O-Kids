@@ -2,8 +2,7 @@ const router = require('express').Router();
 const { Student, Parent } = require('../models');
 const withAuth = require('../utils/auth.js');
 
-//When the URL is examplewebsite.com/, then the parentDash.handlbars view will be rendered within the main.handlebars layout
-//Get all students where the logged in user in the associated parent
+//Remember: When the URL is examplewebsite.com/, then the parentDash.handlbars view will be rendered within the main.handlebars layout
 router.get('/', (req, res) => {
   console.log(req.session); 
   Student.findAll({
