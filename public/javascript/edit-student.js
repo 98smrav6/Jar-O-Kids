@@ -1,5 +1,6 @@
 async function editFormHandler(event) {
     event.preventDefault();
+    console.log("edit form submitted");
 
     const student_firstname = document.querySelector('input[name="student-first-name"]').value.trim();
     const student_lastname = document.querySelector('input[name="student-last-name"]').value.trim();
