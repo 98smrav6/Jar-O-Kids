@@ -129,9 +129,15 @@ color: #00070a;
 width: 20%;
 margin: 3.5%;
 opacity: .9;
+text-align: center;
 }
 
-
+#email-text {
+  padding-left: 32px;
+}
+.btn-submit {
+  padding-right: 30px;
+}
 /*parentDash.handlebars*/
 /*form style*/
 .add-student-form {
