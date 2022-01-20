@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-h4 {
+h1, h4 {
   text-align: center;
 }
 
@@ -43,7 +43,7 @@ body {
 }
 
 /* Style button start */
-.btn {
+.add-student-btn {
   align-items: center;
   background-color: yellowgreen;
   border: 0;
@@ -190,7 +190,8 @@ opacity: .9;
 
 /*parentDash.handlebars*/
 /*form style*/
-.add-student-form, edit-student-form {
+.add-student-form
+ {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -215,6 +216,35 @@ opacity: .9;
   width: 100%;
   margin-bottom: 15px;
 }
+
+.btn {
+  align-items: center;
+  background-color: yellowgreen;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: center;
+  font-size: 14px;
+  font-weight: 700;
+  justify-content: center;
+  line-height: .9em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.container {  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  } 
 
 
 /*adminDash.handlebars*/
