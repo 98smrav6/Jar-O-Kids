@@ -1,8 +1,7 @@
 const router = require('express').Router();
 const { Student, Parent } = require('../models');
-const withAuth = require('../utils/auth.js');
 
-//Remember: When the URL is examplewebsite.com/, then the parentDash.handlbars view will be rendered within the main.handlebars layout
+//GET all students associated with logged in parent (/parentDash/)
 router.get('/', (req, res) => {
   console.log(req.session); 
   Student.findAll({
@@ -34,11 +33,10 @@ router.get('/', (req, res) => {
   })
 });
 
-//Get single student where the logged in user is associated parent; send to edit page
-router.get('/edit/:id', withAuth, (req, res) => {
+//GET student by id and render edit screen (/parentDash/edit/:id)
+router.get('/edit/:id', (req, res) => {
   Student.findByPk(req.params.id, {
     attributes: [
-      'id',
       'student_firstname',
       'student_lastname',
       'student_grade',
@@ -55,10 +53,12 @@ router.get('/edit/:id', withAuth, (req, res) => {
     .then(dbStudentData => {
       if (dbStudentData) {
         const student = dbStudentData.get({ plain: true });
+
         res.render('edit-student', {
           student,
           loggedIn: true
         });
+
       } else {
         res.status(404).end();
       }

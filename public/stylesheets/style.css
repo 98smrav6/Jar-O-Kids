@@ -147,7 +147,7 @@ margin: 3.5%
 
 /*parentDash.handlebars*/
 /*form style*/
-.add-student-form {
+.add-student-form, edit-student-form {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
