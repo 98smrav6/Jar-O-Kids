@@ -3,6 +3,14 @@ const express = require('express');
 const session = require('express-session');
 const sequelize = require('./config/connection');
 const routes = require('./controllers');
+const rateLimit = require("express-rate-limit");
+
+// limit request ip
+const limiter = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  max: 10, // limit each IP to 2 requests per windowMs
+  message: "Too many accounts created from this IP, please try again after a minute"
+});
 
 //Handlbars
 const exphbs = require('express-handlebars');
@@ -32,6 +40,7 @@ app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(limiter); //  apply to all requests
 
 //Handlebars
 app.engine('handlebars', hbs.engine);
