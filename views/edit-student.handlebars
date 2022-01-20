@@ -3,24 +3,25 @@
   <h2>
     Edit Student
   </h2>
-  <section>
-    <form class="add-student-form">
-      <div class= "parent-edit edit-student">
-          <p>Student First Name:</p>
-          <input name="student-first-name" type="text" value="{{student.student_firstname}}"/>
-          <p>Student Last Name: </p>
-          <input name="student-last-name" type="text" value="{{student.student_lastname}}"/>
-          <p>Student Address: </p>
-          <input name="student-address" type="text" value="{{student.student_address}}"/>
-          <p>Student Grade: </p>
-          <input name="student-grade" type="text" value="{{student.student_grade}}"/>
-      </div>    
+  <form class="edit-student-form">
+    <div class= "parent-edit edit-student">
+      <p>Student First Name:</p>
+      <input name="student-first-name" type="text" value="{{student.student_firstname}}"/>
+
+      <p>Student Last Name: </p>
+      <input name="student-last-name" type="text" value="{{student.student_lastname}}"/>
       
-    </form>
+      <p>Student Address: </p>
+      <input name="student-address" type="text" value="{{student.student_address}}"/>
+      
+      <p>Student Grade: </p>
+      <input name="student-grade" type="text" value="{{student.student_grade}}"/>
+      
+      <button type="submit">Save Changes</button>
+    </div>    
+    
+  </form>
 
-    <button type="submit">Save Changes</button>
-
-  </section>
 </article>
 
 <script src="/javascript/edit-student.js"></script>
