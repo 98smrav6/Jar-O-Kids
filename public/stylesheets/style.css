@@ -3,6 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
 /*Homepage.handlebars*/
 /* Header font */
 h1 {
@@ -60,7 +67,7 @@ body {
 
 header {
   padding: 20px 35px;
-  background-color: #39a6b2;
+  background-color: #033268;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -75,12 +82,13 @@ header {
 
 /* Registration style */
 .hero-form {
-border: 3px solid #def50a;
+border-radius: 15px;
 background-color: #38aefc;
 padding: 40px;
 color: #00070a;
 width: 40%;
-margin: 3.5%
+margin: 3.5%;
+opacity: .9;
 }
 
 /* Form style */
@@ -94,7 +102,7 @@ margin: 3.5%
   margin-bottom: 15px;
 }
 
-/*login.handlebars/*
+/*admin.handlebars AND login.handlebars */
 /* Login style */
 .login {
   display: flex;
@@ -104,7 +112,7 @@ margin: 3.5%
 
 /* Login style */
 .login-form {
-border: 3px solid #def50a;
+border-radius: 15px;
 background-color: #38aefc;
 padding: 20px;
 color: #00070a;
@@ -112,45 +120,9 @@ width: 20%;
 margin: 3.5%
 }
 
-/* Style button start */
-.submit {
-  align-items: center;
-  background-color: yellowgreen;
-  border: 0;
-  border-radius: 4px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  display: center;
-  font-size: 14px;
-  font-weight: 700;
-  justify-content: center;
-  line-height: .9em;
-  max-width: 100%;
-  min-width: 140px;
-  padding: 3px;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.submit {  
-  display: flex;  
-  justify-content: center;  
-  align-items: center;  
-  }  
-
-/*Style button end */
-
-/*admin.handlebars*/
-
-
-
 /*parentDash.handlebars*/
 /*form style*/
-.student-form {
+.add-student-form {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -158,11 +130,14 @@ margin: 3.5%
 
 
 .student-form {
-border: 3px solid #def50a;
+border-radius: 15px;
 background-color: #38aefc;
-padding: 40px;
+padding-top: 30px;
+padding-right: 10px;
+padding-bottom: 30px;
+padding-left: 10px;
 color: #00070a;
-width: 40%;
+width: 20%;
 margin: 3.5%
 }
 
@@ -176,7 +151,7 @@ margin: 3.5%
 
 
 .student-name {
-border: 3px solid #def50a;
+border-radius: 15px;
 background-color: #38aefc;
 padding: 40px;
 color: #00070a;
