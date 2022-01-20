@@ -8,7 +8,7 @@ const rateLimit = require("express-rate-limit");
 // limit request ip
 const limiter = rateLimit({
   windowMs: 60 * 1000, // 1 minute
-  max: 5, // limit each IP to 2 requests per windowMs
+  max: 10, // limit each IP to 2 requests per windowMs
   message: "Too many accounts created from this IP, please try again after a minute"
 });
 
