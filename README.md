@@ -22,7 +22,7 @@ The administrator of the application will have login access to the application. 
 * Heroku
 
 ## Deployed Application:
-* [Jar-O-Kids](https://github.com/98smrav6)
+* [Jar-O-Kids](https://serene-stream-62860.herokuapp.com/)
 
 ## License:
 [MIT License](https://choosealicense.com/licenses/mit/)
